@@ -24,7 +24,7 @@ pipeline {
      // steps {
         // Assuming you have a MySQL client installed, connect to the DB and run the SQL query
        // sh 'mysql -h <hostname> -u <username> -p<password> -e "SELECT * FROM STUDENT_TABLE;"'
-      }
+      //}
     }
   }
 }
