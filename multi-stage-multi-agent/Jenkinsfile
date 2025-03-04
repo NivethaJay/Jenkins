@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
   stages {
     stage('Back-end') {
       agent {
@@ -14,14 +14,17 @@ pipeline {
         docker { image 'node:16-alpine' }
       }
       steps {
-        sh 'npm run'
+        sh 'npm run build' // Specify the script name as needed
       }
     }
     stage('DB') {
       agent {
         docker { image 'mysql:latest' }
       }
-      steps {
-        sh 'SELECT * FROM STUDENT_TABLE'
+     // steps {
+        // Assuming you have a MySQL client installed, connect to the DB and run the SQL query
+       // sh 'mysql -h <hostname> -u <username> -p<password> -e "SELECT * FROM STUDENT_TABLE;"'
+      }
+    }
   }
 }
